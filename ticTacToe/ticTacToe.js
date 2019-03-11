@@ -24,42 +24,9 @@ function linkedList() {
         return head;
     };
 
-    // this.add = function(element) {
-    //     let node = new Node(element);
-    //     if(head === null) {
-    //         head = node;
-    //     } else {
-    //         let currentNode = head;
-
-    //         while(currentNode.next) {
-    //             currentNode = currentNode.next;
-    //         }
-
-    //         currentNode.next = node;
-    //     }
-    //     length++;
-    // };
-
-    // this.add = function(element) {
-    //     let node = new Node(element);
-    //     if(head === null) {
-    //         head = node;
-    //     } else {
-    //         let currentNode = head;
-    //         while(currentNode.next) {
-    //             currentNode = currentNode.next;
-    //         }
-    //         currentNode.next = node;
-    //     }
-    //     length++;
-    //     tail = node;
-    //     let currentNode = tail;
-    //     while(currentNode.previous) {
-    //         currentNode = currentNode.previous;
-    //     }
-    //     currentNode.previous = node;
-    //     head = currentNode.next;
-    // };
+    this.tail = function() {
+        return tail;
+    }
 
     this.add = function(element) {
         let node = new Node(element);
@@ -77,37 +44,30 @@ function linkedList() {
     };
 
     this.remove = function() {
-        let currentNode = head;
-        head = currentNode.next;
-        length--;
+        while(board.length < 6) {
+            let currentNode = head;
+            head = currentNode.next;
+            length--;
+        }
     };
 
-    this.neighbourCheck = function() {
-        re
-    }
+    // this.neighbourCheck = function() {
+    //     re
+    // };
 
-    // 1. list neighbours
-    // 2. 
-
+    
 
 
     
 
-    // this.remove = function(element) {
-    //     let currentNode = head;
-    //     let previousNode;
-    //     if(currentNode.element === element) {
-    //         head = currentNode.next;
-    //     } else {
-    //         while(currentNode.element !== element) {
-    //             previousNode = currentNode;
-    //             currentNode = currentNode.next;
-    //         }
-    //         previousNode.next = currentNode.next;
-    //     }
-    //     length--;
-    // };
+  
 }
+
+// 1. list neighbours
+// 2. conduct a recursion on those afformentioned neighbours
+// 3. the recursion should do the check on their respective neighbours until the conditon is met, then should close and revert back to the
+// function that called it in the first place.
+// 4. make sure each square has instructional code that dictates the neighbours it contains respectively
 
 
 
@@ -150,14 +110,14 @@ let userPosition9_div = document.getElementById("squareProp9");
 let toggle = false;
 
 
-// Variable that 
+// Variable that checks if each square has already been clicked
 let alreadyClicked = [false, false, false, false, false, false, false, false, false];
 
 
 // Square 1 properties
 userPosition1_div.addEventListener('click', function() {
-    board.add(userPosition1_div);
-    board.remove();
+  //  board.add(userPosition1_div);
+  //  board.remove();
     console.log('1');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -173,16 +133,37 @@ userPosition1_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition1_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
-                    return 1;
+                    board.add(userPosition1_div);
+                    board.remove();
                 }
             }
             alreadyClicked[0] = true;
-            return 1;
         }
     }
 });
+
+
+// Square 1 neighbours
+// 1 => 2, 4, 5
+
+
+//let square1Neibourghs = {1:[2, 4, 5],}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Square 2 properties
