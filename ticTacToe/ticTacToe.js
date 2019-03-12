@@ -44,16 +44,16 @@ function linkedList() {
     };
 
     this.remove = function() {
-        while(board.length < 6) {
+        while(length > 5) {
             let currentNode = head;
             head = currentNode.next;
             length--;
         }
     };
 
-    // this.neighbourCheck = function() {
-    //     re
-    // };
+    this.neighbourCheck = function() {
+        re
+    };
 
     
 
@@ -75,16 +75,21 @@ function linkedList() {
 let board = new linkedList();
 
 
+// All square neighbours
+let squareNeibourghs = {
+    1:[2, 4, 5],
+    2:[1, 3, 5],
+    3:[2, 5, 6],
+    4:[1, 5, 7],
+    5:[4, 1, 2, 3, 6, 7, 8, 9],
+    6:[3, 5, 9],
+    7:[4, 5, 8],
+    8:[7, 5, 9],
+    9:[8, 5, 6]
+}
 
-// 1. Add 6th node
-// 2. Make 6th node the new tail
-// 3. Make second node the new Head
 
 
-
-
-// 1. Need to count up to the 5th board element
-// 2. Need to ensure board only contains 5 elements at any point
 // 3. Starting from the 5th element do the linkedList Neighbour check function
 // 4. Extract the 5th, 3rd, and 1st elements from the LinkedList, and put them in a new variable
 // 5. Create a function that will take the three elements from the new variable and match against the 
@@ -116,8 +121,6 @@ let alreadyClicked = [false, false, false, false, false, false, false, false, fa
 
 // Square 1 properties
 userPosition1_div.addEventListener('click', function() {
-  //  board.add(userPosition1_div);
-  //  board.remove();
     console.log('1');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -147,29 +150,8 @@ userPosition1_div.addEventListener('click', function() {
 });
 
 
-// Square 1 neighbours
-// 1 => 2, 4, 5
-
-
-//let square1Neibourghs = {1:[2, 4, 5],}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Square 2 properties
 userPosition2_div.addEventListener('click', function() {
-    board.add(userPosition2_div);
-    board.remove();
     console.log('2');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -185,8 +167,12 @@ userPosition2_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition2_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition2_div);
+                    board.remove();
                 }
             }
             alreadyClicked[1] = true;
@@ -197,8 +183,6 @@ userPosition2_div.addEventListener('click', function() {
 
 // Square 3 properties
 userPosition3_div.addEventListener('click', function() {
-    board.add(userPosition3_div);
-    board.remove();
     console.log('3');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -214,8 +198,12 @@ userPosition3_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition3_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition3_div);
+                    board.remove();
                 }
             }
             alreadyClicked[2] = true;
@@ -226,8 +214,6 @@ userPosition3_div.addEventListener('click', function() {
 
 // Square 4 properties
 userPosition4_div.addEventListener('click', function() {
-    board.add(userPosition4_div);
-    board.remove();
     console.log('4');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -243,8 +229,12 @@ userPosition4_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition4_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition4_div);
+                    board.remove();
                 }
             }
             alreadyClicked[3] = true;
@@ -255,8 +245,6 @@ userPosition4_div.addEventListener('click', function() {
 
 // Square 5 properties
 userPosition5_div.addEventListener('click', function() {
-    board.add(userPosition5_div);
-    board.remove();
     console.log('5');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -272,8 +260,12 @@ userPosition5_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition5_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition5_div);
+                    board.remove();
                 }
             }
             alreadyClicked[4] = true;
@@ -284,8 +276,6 @@ userPosition5_div.addEventListener('click', function() {
 
 // Square 6 properties
 userPosition6_div.addEventListener('click', function() {
-    board.add(userPosition6_div);
-    board.remove();
     console.log('6');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -301,8 +291,12 @@ userPosition6_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition6_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition6_div);
+                    board.remove();
                 }
             }
             alreadyClicked[5] = true;
@@ -313,8 +307,6 @@ userPosition6_div.addEventListener('click', function() {
 
 // Square 7 properties
 userPosition7_div.addEventListener('click', function() {
-    board.add(userPosition7_div);
-    board.remove();
     console.log('7');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -330,8 +322,12 @@ userPosition7_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition7_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition7_div);
+                    board.remove();
                 }
             }
             alreadyClicked[6] = true;
@@ -342,8 +338,6 @@ userPosition7_div.addEventListener('click', function() {
 
 // Square 8 properties
 userPosition8_div.addEventListener('click', function() {
-    board.add(userPosition8_div);
-    board.remove();
     console.log('8');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -359,8 +353,12 @@ userPosition8_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition8_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition8_div);
+                    board.remove();
                 }
             }
             alreadyClicked[7] = true;
@@ -371,8 +369,6 @@ userPosition8_div.addEventListener('click', function() {
 
 // Square 9 properties
 userPosition9_div.addEventListener('click', function() {
-    board.add(userPosition9_div);
-    board.remove();
     console.log('9');
     console.log(board);
     playerTurn(alreadyClicked);
@@ -388,8 +384,12 @@ userPosition9_div.addEventListener('click', function() {
                 console.log(toggle);
                 if(toggle === true) {
                     changeImage("004F-500x500.png");
+                    board.add(userPosition9_div);
+                    board.remove();
                 } else {
                     changeImage("0058-500x500.png");
+                    board.add(userPosition9_div);
+                    board.remove();
                 }
             }
             alreadyClicked[8] = true;
